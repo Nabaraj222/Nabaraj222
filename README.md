@@ -1,6 +1,6 @@
 ## Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px" height="30px" />
 
-My name is Nabaraj Ghimire and I'm a Software Engineer from Pokhara, Nepal. My technology stack includes Asp.Net, C#, Ms-SQL, javascript, jQuery, React, and HTML/CSS/Bootstrap. Besides programming, I have an immense interest in reading, swimming.
+My name is Nabaraj Ghimire and I'm a Software Engineer from Pokhara, Nepal. My technology stack includes Asp.Net, C#, Ms-SQL, javascript, jQuery, React, and HTML/CSS/Bootstrap. Besides programming, I have an immense interest in reading and swimming.
 
 ## 🔧 Technologies & Tools
 ![](https://img.shields.io/badge/OS-windows-darkcyan)
