@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var myGamePiece;
+var myObstacles = [];
+var mySound;
+
+function startGame() {
+    myGamePiece = new component(30, 30, "red", 10, 120);
+    mySound = new sound("bounce.mp3");
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    },    
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            mySound.play();
+            myGameArea.stop();
+            return;
+        } 
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        x = myGameArea.canvas.width;
+        minHeight = 20;
+        maxHeight = 200;
+        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+        minGap = 50;
+        maxGap = 200;
+        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+        myObstacles.push(new component(10, height, "green", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].x -= 1;
+        myObstacles[i].update();
+    }
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function moveup() {
+    myGamePiece.speedY = -1; 
+}
+
+function movedown() {
+    myGamePiece.speedY = 1; 
+}
+
+function moveleft() {
+    myGamePiece.speedX = -1; 
+}
+
+function moveright() {
+    myGamePiece.speedX = 1; 
+}
+
+function clearmove() {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
+</script>
+<div style="text-align:center;width:480px;">
+  <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+  <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+  <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+</div>
+<p>Turn up the volume. Do you hear a "dunk" when the red square hits an obstacle?</p>
+</body>
+
+<center>
+<SCRIPT name = "JavaScript">
+function variables(){
+    t = 1;
+    change = 1;    
+    empty1 = -1;
+    empty2 = -1;
+    empty3 = -1;
+    empty4 = -1;
+    empty5 = -1;
+    empty6 = -1;
+    empty7 = -1;
+    empty8 = -1;
+    empty9 = -1;
+    return;
+    whogoesnow = "Tour joueur 1"
+}
+
+function win(){
+  if   (empty1==empty2 && empty2==empty3 && empty3==0 ||
+empty4==empty5 && empty5==empty6 && empty6==0 ||    
+        empty7==empty8 && empty8==empty9 && empty9==0 ||
+        empty1==empty4 && empty4==empty7 && empty7==0 ||
+        empty2==empty5 && empty5==empty8 && empty8==0 ||
+        empty3==empty6 && empty6==empty9 && empty9==0 ||
+        empty1==empty5 && empty5==empty9 && empty9==0 ||
+        empty3==empty5 && empty5==empty7 && empty7==0 ){
+        alert ("Joueur 1: VOUS GAGNEZ !!!");          
+        history.go(0)  
+  }
+  if   (empty1==empty2 && empty2==empty3 && empty3==1 ||
+empty4==empty5 && empty5==empty6 && empty6==1 ||    
+        empty7==empty8 && empty8==empty9 && empty9==1 ||
+        empty1==empty4 && empty4==empty7 && empty7==1 ||
+        empty2==empty5 && empty5==empty8 && empty8==1 ||
+        empty3==empty6 && empty6==empty9 && empty9==1 ||
+        empty1==empty5 && empty5==empty9 && empty9==1 ||
+        empty3==empty5 && empty5==empty7 && empty7==1 ){
+        alert ("Joueur 2: VOUS GAGNEZ !!!");
+	history.go(0)
+  }
+}
+
+function turnchange(t){
+  if (change == 1)  {
+    if (t == 0){
+        t = 1;
+        whogoesnow = "Tour : Joueur " + 1
+    }
+    else {
+        t = 0;
+	whogoesnow = "Tour : Joueur " + 2
+    }
+    
+  }
+  else {
+    t = t;
+  }
+  change = 1  
+  return (t); 
+}
+
+function changing(clicked){
+if (clicked == 1){            
+   spot = empty1 ;}
+if (clicked == 2){
+   spot = empty2 ;}
+if (clicked == 3){
+   spot = empty3 ;}
+if (clicked == 4){
+   spot = empty4 ;}
+if (clicked == 5){
+   spot = empty5 ;}
+if (clicked == 6){
+   spot = empty6 ;}
+if (clicked == 7){
+   spot = empty7 ;}
+if (clicked == 8){
+   spot = empty8 ;}
+if (clicked == 9){
+   spot = empty9 ;}
+
+if (spot == -1){
+   if (t == 0){
+      xo = "  O  " ;	       	          
+      spot = 0             
+   }
+   else {
+      xo = "  X  "  ;              
+      spot = 1	     
+   }                              
+   if (clicked == 1){            
+      empty1 = spot;}
+   if (clicked == 2){
+      empty2 = spot ;}
+   if (clicked == 3){
+      empty3 = spot ;}
+   if (clicked == 4){
+      empty4 = spot ;}
+   if (clicked == 5){
+      empty5 = spot ;}
+   if (clicked == 6){
+      empty6 = spot ;}
+   if (clicked == 7){
+      empty7 = spot ;}
+   if (clicked == 8){
+      empty8 = spot ;}
+   if (clicked == 9){
+      empty9 = spot ;}
+} 
+else {
+   if (spot == 0){
+       xo = "  O  ";}
+   if (spot == 1){
+       xo = "  X  ";}
+   change = 0
+}
+return (xo) ;
+}
+
+function change_b1(form){	
+    clicked = 1;    
+    changing(clicked) ;     
+    t = turnchange(t) ;  
+    form.b1.value = xo; 
+    form.whoseturn.value = whogoesnow        
+    win(); 
+   return;
+}
+function change_b2(form){	
+    clicked = 2;
+    changing(clicked) ;   
+    form.b2.value = xo;    
+    t = turnchange(t) ;
+    form.whoseturn.value = whogoesnow      
+    win();
+    return;
+}
+
+function change_b3(form){	
+    clicked = 3;
+    changing(clicked) ;
+    form.b3.value = xo;         
+    t = turnchange(t) ;    
+    form.whoseturn.value = whogoesnow 
+    win();
+    return;   
+}
+
+function change_b4(form){	
+    clicked = 4;
+    changing(clicked) ;
+    form.b4.value = xo;    
+    t = turnchange(t) ;    
+    form.whoseturn.value = whogoesnow     
+    win();
+    return;
+}
+
+function change_b5(form){	
+    clicked = 5;
+    changing(clicked) ;
+    form.b5.value = xo;    
+    t = turnchange(t) ;
+    form.whoseturn.value = whogoesnow     
+    win();     
+    return;
+}
+
+function change_b6(form){	
+    clicked = 6;
+    changing(clicked) ;
+    form.b6.value = xo;    
+    t = turnchange(t) ;
+    form.whoseturn.value = whogoesnow     
+    win();
+    return;
+}
+
+function change_b7(form){	
+    clicked = 7;
+    changing(clicked) ;
+    form.b7.value = xo;    
+    t = turnchange(t) ; 
+    form.whoseturn.value = whogoesnow    
+    win();
+    return;
+}
+
+function change_b8(form){	
+    clicked = 8;
+    changing(clicked) ;    
+    form.b8.value = xo;    
+    t = turnchange(t) ;
+    form.whoseturn.value = whogoesnow 
+    win();    
+    return;
+}
+
+function change_b9(form){	
+    clicked = 9;
+    changing(clicked) ;
+    form.b9.value = xo;    
+    t = turnchange(t) ;
+    form.whoseturn.value = whogoesnow  
+    win();
+    return;
+}
+</SCRIPT>
+
+
+<SCRIPT name = "JavaScript">
+variables();
+</SCRIPT>
+
+<FORM>
+<input type = "button" name = "whoseturn" 
+ value = "Tour: Journey  1">	 
+<br><br><br><br>
+<table>
+<tr><td><input type = "button" name = "b1" value = "      "		 onClick =
+change_b1(this.form)>  
+    <td><input type = "button" name = "b2" value = "      "		 onClick = change_b2(this.form)> 
+    <td><input type = "button" name = "b3" value = "      "		 onClick =
+change_b3(this.form)> 
+<tr><td><input type = "button" name = "b4" value = "      "		 onClick =
+change_b4(this.form)> 
+    <td><input type = "button" name = "b5" value = "      "		 onClick = change_b5(this.form)> 
+    <td><input type = "button" name = "b6" value = "      "		 onClick =
+change_b6(this.form)> 
+<tr><td><input type = "button" name = "b7" value = "      "		 onClick =
+change_b7(this.form)> 
+    <td><input type = "button" name = "b8" value = "      "		 onClick = change_b8(this.form)>   
+    <td><input type = "button" name = "b9" value = "      "
+onClick = change_b9(this.form)> 
+</table>
+<br><br>
+
+<INPUT TYPE="button" VALUE="Nabaraj's Game" onClick="history.go(0)">
+</center>
+<! snake games starts here>
+<!DOCTYPE html>
+
+<head>
+  <title></title>
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas {
+    border: 1px solid white;
+  }
+  </style>
+</head>
+<body>
+<canvas width="400" height="400" id="game"></canvas>
+<script>
+var canvas = document.getElementById('game');
+var context = canvas.getContext('2d');
+var grid = 16;
+var count = 0;
+  
+var snake = {
+  x: 160,
+  y: 160,
+  
+  // snake velocity. moves one grid length every frame in either the x or y direction
+  dx: grid,
+  dy: 0,
+  
+  // keep track of all grids the snake body occupies
+  cells: [],
+  
+  // length of the snake. grows when eating an apple
+  maxCells: 4
+};
+var apple = {
+  x: 320,
+  y: 320
+};
+// get random whole numbers in a specific range
+// @see https://stackoverflow.com/a/1527820/2124254
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+// game loop
+function loop() {
+  requestAnimationFrame(loop);
+  // slow game loop to 15 fps instead of 60 (60/15 = 4)
+  if (++count < 4) {
+    return;
+  }
+  count = 0;
+  context.clearRect(0,0,canvas.width,canvas.height);
+  // move snake by it's velocity
+  snake.x += snake.dx;
+  snake.y += snake.dy;
+  // wrap snake position horizontally on edge of screen
+  if (snake.x < 0) {
+    snake.x = canvas.width - grid;
+  }
+  else if (snake.x >= canvas.width) {
+    snake.x = 0;
+  }
+  
+  // wrap snake position vertically on edge of screen
+  if (snake.y < 0) {
+    snake.y = canvas.height - grid;
+  }
+  else if (snake.y >= canvas.height) {
+    snake.y = 0;
+  }
+  // keep track of where snake has been. front of the array is always the head
+  snake.cells.unshift({x: snake.x, y: snake.y});
+  // remove cells as we move away from them
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
+  }
+  // draw apple
+  context.fillStyle = 'red';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+  // draw snake one cell at a time
+  context.fillStyle = 'green';
+  snake.cells.forEach(function(cell, index) {
+    
+    // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+    // snake ate apple
+    if (cell.x === apple.x && cell.y === apple.y) {
+      snake.maxCells++;
+      // canvas is 400x400 which is 25x25 grids 
+      apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+    }
+    // check collision with all cells after this one (modified bubble sort)
+    for (var i = index + 1; i < snake.cells.length; i++) {
+      
+      // snake occupies same space as a body part. reset game
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+      }
+    }
+  });
+}
+// listen to keyboard events to move the snake
+document.addEventListener('keydown', function(e) {
+  // prevent snake from backtracking on itself by checking that it's 
+  // not already moving on the same axis (pressing left while moving
+  // left won't do anything, and pressing right while moving left
+  // shouldn't let you collide with your own body)
+  
+  // left arrow key
+  if (e.which === 37 && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+  // up arrow key
+  else if (e.which === 38 && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+  // right arrow key
+  else if (e.which === 39 && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+  // down arrow key
+  else if (e.which === 40 && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+});
+// start the game
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
