@@ -24,6 +24,4 @@ I am Nabaraj Ghimire, a Software Engineer from Pokhara, Nepal.
 
 ## &#x1f4c8; GitHub Contribution Stats
 
-[![Nabaraj's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nabaraj222&show_icons=true)](https://github.com/Nabaraj222)
-
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Nabaraj222&layout=compact)](https://github.com/Nabaraj222)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/nabarajghimire)
