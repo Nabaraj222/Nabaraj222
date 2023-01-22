@@ -23,6 +23,8 @@ I am Nabaraj Ghimire, a Software Engineer from Pokhara, Nepal.
 ![](https://img.shields.io/badge/Tools-Jira-darkcyan)
 
 ## &#x1f4c8; GitHub Contribution Stats
-Oops! This section is under maintenance, It will take few days to be fully functional with the github custom action bot.
+![](./profile-3d-contrib/profile-night-rainbow.svg)
+
+If you wanna sponser my works or expects more open source contribution in the future then don't forgot to:
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/nabarajghimire)
