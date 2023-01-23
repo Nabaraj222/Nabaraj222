@@ -80,10 +80,14 @@ Currently, I am pursuing a Master's degree in Computer Engineering at Pokhara Un
         document.documentElement.removeEventListener(s, updateFlashlight, false);
       });
     });
+
     moon.addEventListener('click', e => {
       html.classList.add('dark');
       html.classList.remove('light');
-
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+      {
+        alert("Hait! Your device's power is not enough for the flashlight.");
+      }
       updateFlashlight(e);
       ["mousemove", "touchstart", "touchmove", "touchend"].forEach(function(s) {
         document.documentElement.addEventListener(s, updateFlashlight, false);
