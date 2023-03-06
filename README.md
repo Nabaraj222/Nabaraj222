@@ -23,7 +23,7 @@ I am Nabaraj Ghimire, a Software Engineer from Pokhara, Nepal.
 ![](https://img.shields.io/badge/Tools-Jira-darkcyan)
 
 ## &#x1f4c8; GitHub Contribution Stats
-![](./profile-3d-contrib/profile-night-rainbow.svg)
+![](./profile-3d-contrib/profile-green-animate.svg)
 
 If you wanna sponser my works or expects more open source contribution in the future then don't forgot to:
 
