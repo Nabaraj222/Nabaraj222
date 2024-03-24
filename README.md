@@ -1,9 +1,9 @@
 ## Hello, folks! <img src="./assets/image/wave.gif" width="30px" height="30px" />
 
 I am Nabaraj Ghimire, a Software Engineer from Pokhara, Nepal. 
-- :mortar_board: Currently pursuing a Master's degree in Computer Engineering at Pokhara University (2021-present).
+- :mortar_board: Completed a Master's in Computer Engineering at Pokhara University (2023).
 - :computer: My technology stack includes Asp.Net, C#, Ms-SQL, javascript, jQuery, React, and HTML/CSS/Bootstrap.
-- :sparkles: I have an immense interest in reading and swimming.
+- :sparkles: I am immensely interested in reading, swimming, and hiking.
 
 ## 🔧 Technologies & Tools
 ![](https://img.shields.io/badge/OS-windows-darkcyan)
