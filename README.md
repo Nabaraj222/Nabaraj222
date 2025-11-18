@@ -21,7 +21,3 @@ I am Nabaraj Ghimire, a Principal Software Engineer from Nepal.
 ![](https://img.shields.io/badge/Database-MS--SQL-darkcyan)
 ![](https://img.shields.io/badge/Server-IIS-darkcyan)
 ![](https://img.shields.io/badge/Tools-Jira-darkcyan)
-
-If you wanna sponser my works or expects more open source contribution in the future then don't forgot to:
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/nabarajghimire)
