@@ -1,23 +1,11 @@
-## Hello, folks! <img src="./assets/image/wave.gif" width="30px" height="30px" />
+# Hi, I'm Nabaraj Ghimire 👋
 
-I am Nabaraj Ghimire, a Principal Software Engineer from Nepal. 
-- :mortar_board: Master's of Computer Engineering (2023) from Pokhara University, Nepal.
-- :computer: My technology stack includes Asp.Net, C#, Ms-SQL, javascript, jQuery, React, and HTML/CSS/Bootstrap.
-- :sparkles: I am immensely interested in reading, swimming, and hiking.
+I'm a **Principal Software Engineer** with deep experience in designing and building enterprise-grade applications.
 
-## 🔧 Technologies & Tools
-![](https://img.shields.io/badge/OS-windows-darkcyan)
-![](https://img.shields.io/badge/Editor-Visual%20Studio-darkcyan)
-![](https://img.shields.io/badge/Editor-VS%20Code-darkcyan)
-![](https://img.shields.io/badge/Code-C%23-darkcyan)
-![](https://img.shields.io/badge/Code-.Net-darkcyan)
-![](https://img.shields.io/badge/Code-Javascript-darkcyan)
-![](https://img.shields.io/badge/Code-jQuery-darkcyan)
-![](https://img.shields.io/badge/Code-React-darkcyan)
-![](https://img.shields.io/badge/Code-HTML-darkcyan)
-![](https://img.shields.io/badge/Code-CSS-darkcyan)
-![](https://img.shields.io/badge/Shell-Bash-darkcyan)
-![](https://img.shields.io/badge/SCM-git-darkcyan)
-![](https://img.shields.io/badge/Database-MS--SQL-darkcyan)
-![](https://img.shields.io/badge/Server-IIS-darkcyan)
-![](https://img.shields.io/badge/Tools-Jira-darkcyan)
+**Tech Expertise:**  
+- Backend: ASP.NET Core, C#, MS-SQL, PostgreSQL  
+- Frontend: Angular, React, JQuery  
+- UI: HTML, CSS, Bootstrap  
+
+I love working at the intersection of **engineering, system architecture, and product thinking**.  
+When I’m not coding, you'll find me **reading, swimming, or hiking** - anything that fuels curiosity and balance.
