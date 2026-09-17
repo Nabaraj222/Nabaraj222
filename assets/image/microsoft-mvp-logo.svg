@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 140" role="img" aria-labelledby="mvpLogoTitle">
+  <title id="mvpLogoTitle">Microsoft Most Valuable Professional</title>
+  <g fill="#2f4b7c">
+    <rect x="18" y="18" width="104" height="104" rx="10" transform="rotate(45 70 70)"/>
+    <text x="70" y="82" text-anchor="middle" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#ffffff">MVP</text>
+    <text x="148" y="56" font-size="30" font-family="Arial, Helvetica, sans-serif" font-weight="400">Microsoft</text>
+    <text x="148" y="88" font-size="31" font-family="Arial, Helvetica, sans-serif" font-weight="700">Most Valuable</text>
+    <text x="148" y="120" font-size="31" font-family="Arial, Helvetica, sans-serif" font-weight="700">Professional</text>
+  </g>
+</svg>
