@@ -1,6 +1,6 @@
 # Hi, I'm Nabaraj Ghimire 👋
 
-I'm a Principal Software Engineer with specialized knowledge and experience in designing and building enterprise-grade applications.
+I'm a Principal Software Engineer and Microsoft MVP with specialized knowledge and experience in designing and building enterprise-grade applications.
 
 **Tech Expertise:**  
 - Backend: ASP.NET Core, C#, MS-SQL, PostgreSQL  
